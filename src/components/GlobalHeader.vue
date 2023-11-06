@@ -1,5 +1,5 @@
 <template>
-  <a-row id="gloablHeader" align="center" :wrap="false">
+  <a-row id="globalHeader" align="center" :wrap="false">
     <a-col flex="auto">
       <a-menu
         mode="horizontal"
@@ -12,8 +12,8 @@
           disabled
         >
           <div class="title-bar">
-            <img class="logo" src="../assets/闪电.svg" />
-            <div class="title">P OJ</div>
+            <img class="logo" src="../assets/oj-logo.svg" />
+            <div class="title">鱼 OJ</div>
           </div>
         </a-menu-item>
         <a-menu-item v-for="item in visibleRoutes" :key="item.path">
@@ -40,11 +40,13 @@ import ACCESS_ENUM from "@/access/accessEnum";
 const router = useRouter();
 const store = useStore();
 
+// 展示在菜单的路由数组
 const visibleRoutes = computed(() => {
   return routes.filter((item, index) => {
     if (item.meta?.hideInMenu) {
       return false;
     }
+    // 根据权限过滤菜单
     if (
       !checkAccess(store.state.user.loginUser, item?.meta?.access as string)
     ) {
@@ -54,15 +56,19 @@ const visibleRoutes = computed(() => {
   });
 });
 
+// 默认主页
 const selectedKeys = ref(["/"]);
 
+// 路由跳转后，更新选中的菜单项
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
 
+console.log();
+
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
-    userName: "pp",
+    userName: "鱼皮管理员",
     userRole: ACCESS_ENUM.ADMIN,
   });
 }, 3000);
@@ -74,19 +80,18 @@ const doMenuClick = (key: string) => {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title-bar {
   display: flex;
   align-items: center;
 }
 
-.logo {
-  height: 48px;
-}
-
 .title {
   color: #444;
   margin-left: 16px;
+}
+
+.logo {
+  height: 48px;
 }
 </style>

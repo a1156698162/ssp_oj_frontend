@@ -7,7 +7,11 @@
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
-      <a-layout-footer class="footer">by ssp</a-layout-footer>
+      <a-layout-footer class="footer">
+        <a href="https://yupi.icu" target="_blank">
+          编程导航知识星球 by 程序员鱼皮
+        </a>
+      </a-layout-footer>
     </a-layout>
   </div>
 </template>
@@ -22,7 +26,7 @@
 }
 
 #basicLayout .content {
-  background: linear-gradient(to right, #eee, #fff);
+  background: linear-gradient(to right, #fefefe, #fff);
   margin-bottom: 16px;
   padding: 20px;
 }

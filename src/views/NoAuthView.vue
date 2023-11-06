@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
-    <h1>no auth page</h1>
-  </div>
+  <div class="home">你没权限</div>
 </template>
+
+<script lang="ts"></script>

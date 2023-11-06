@@ -3,14 +3,18 @@
     <a-layout style="min-height: 100vh">
       <a-layout-header class="header">
         <a-space>
-          <img src="../assets/闪电.svg" class="logo" />
-          <div>SOJ</div>
+          <img src="../assets/oj-logo.svg" class="logo" />
+          <div>鱼 OJ</div>
         </a-space>
       </a-layout-header>
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
-      <a-layout-footer class="footer">by ssp</a-layout-footer>
+      <a-layout-footer class="footer">
+        <a href="https://yupi.icu" target="_blank">
+          编程导航知识星球 by 程序员鱼皮
+        </a>
+      </a-layout-footer>
     </a-layout>
   </div>
 </template>
@@ -18,7 +22,8 @@
 <style scoped>
 #userLayout {
   text-align: center;
-  background: url("https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png");
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png")
+    0% 0% / 100% 100%;
 }
 
 #userLayout .logo {
